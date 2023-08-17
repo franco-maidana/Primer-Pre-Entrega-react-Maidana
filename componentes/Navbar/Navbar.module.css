@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* barra de navegacion */
+nav {
+  background-color: darkgray;
+}
+
+/* fin de la barra de navegacion */
+/* titulo */
+.titulo {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+/* fin del titulo */
+
+button {
+  width: 200px;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: white;
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-around;
+
+}
