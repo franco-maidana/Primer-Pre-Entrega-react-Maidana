@@ -1,4 +1,4 @@
-import './ItemListContainer.module.css'
+import main from './ItemListContainer.module.css'
 import { useState, useEffect } from 'react'
 import { getproduct } from '../../src/asyncMock'
 import ItemList from '../ItemList/ItemList'
@@ -15,7 +15,7 @@ const ItemListContainer = () => {
 
 
   return (
-    <main>
+    <main className={main.main}>
       <ItemList product={product} />
     </main>
   )
