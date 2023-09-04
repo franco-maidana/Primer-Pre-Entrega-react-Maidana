@@ -1,0 +1,22 @@
+.botones {
+  width: 45px;
+  font-size: 10px;
+  margin-bottom: 5px;
+  margin-left: 48px;
+}
+
+.botonesDos {
+  width: 45px;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.agregarACarro {
+  width: 120px;
+  font-size: 11px;
+  margin: 1px;
+}
+
+.Cantidad {
+  text-align: center;
+}

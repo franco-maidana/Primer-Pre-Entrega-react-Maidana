@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getProductById } from '../../src/asyncMock.js'
 import ItemDetail from '../ItemDetail/ItemDetail.jsx'
 import { useParams } from 'react-router-dom'
+import stylo from './ItemDetailContainer.module.css'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null)
@@ -19,7 +20,7 @@ const ItemDetailContainer = () => {
   console.log(product)
   return (
     <div>
-      <h1>Detalle de producto</h1>
+      <p className={stylo.hola}>Detalle Del Producto Seleccionado</p>
       <ItemDetail {...product} />
     </div>
   )

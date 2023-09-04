@@ -1,0 +1,22 @@
+.caja {
+  width: 321px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 1px 6px 16px rgba(0, 0, 0, 0.9);
+}
+
+.h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.precio {
+  text-align: center;
+}

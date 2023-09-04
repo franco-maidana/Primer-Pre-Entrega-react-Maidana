@@ -14,6 +14,7 @@ nav {
   display: flex;
   justify-content: center;
   font-size: 30px;
+  cursor: pointer;
 }
 
 /* fin del titulo */

@@ -2,6 +2,7 @@ import './App.css'
 import Navbar from '../componentes/Navbar/Navbar'
 import ItemListContainer from '../componentes/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from '../componentes/ItemDetailContainer/ItemDetailContainer'
+// libreria react router dom para hacer interactuar el navBar
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -21,4 +22,3 @@ function App() {
 
 export default App
 
-// 1 hora 02 minutos
