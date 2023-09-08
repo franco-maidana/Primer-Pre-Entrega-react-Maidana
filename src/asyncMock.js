@@ -4,6 +4,8 @@ const products = [
     nombre: "Lupulo Cascade",
     precio: "400",
     imagen: "https://acdn.mitiendanube.com/stores/852/895/products/cascade-11-2648b98475ae004f0516505660189365-320-0.webp",
+    description: "el lúpulo Cascade es una variedad de lúpulo ampliamente utilizada en la elaboración de cerveza artesanal. Se destaca por su característico aroma cítrico y floral, que aporta notas de pomelo y flores a las cervezas. Es especialmente popular en estilos como las American Pale Ales y las India Pale Ales (IPAs), donde su perfil aromático brinda un sabor y aroma distintivos a las cervezas.",
+    tipo: "pale ale, ipa , american ipa",
   },
   {
     id: "2",
