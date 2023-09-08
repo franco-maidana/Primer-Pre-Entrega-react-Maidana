@@ -17,7 +17,8 @@ const ItemDetail = ({ nombre, precio, description, imagen, marca, stock, tipo })
         <ItemCount stock={stock} onAdd={handleOnAdd} />
       </section>
       <section className={carteDelDetalle.cajaDos}>
-        <h4 className={carteDelDetalle.h3}>{description}</h4>
+        <h1>Especificaciones</h1>
+        <p className={carteDelDetalle.h3}>{description}</p>
       </section>
     </div>
   )
