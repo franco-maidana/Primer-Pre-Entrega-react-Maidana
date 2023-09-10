@@ -10,9 +10,9 @@ const Navbar = () => {
     <nav className={Clases.nav}>
       <h1 className={Clases.titulo} onClick={() => navigate('/')}>Insumos Cerveceros</h1>
       <section className={Clases.container}>
-        <button className={Clases.button} onClick={() => navigate('/Insumos')}>Insumos</button>
+        <button className={Clases.button} onClick={() => navigate('/Historia')}>Historia</button>
         <button className={Clases.button} onClick={() => navigate('/Cervezas')}>Cervezas</button>
-        <button className={Clases.button} onClick={() => navigate('/Contacto')}>Contactos</button>
+        <button className={Clases.button} onClick={() => navigate('/Contactos')}>Contactos</button>
         <button className={Clases.button} onClick={() => navigate('/Nosotros')}>Nosotros</button>
       </section>
       <CarWidget />
