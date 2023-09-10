@@ -4,6 +4,7 @@ import ItemDetail from '../ItemDetail/ItemDetail.jsx'
 import { useParams } from 'react-router-dom'
 import stylo from './ItemDetailContainer.module.css'
 
+
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null)
   const { productId } = useParams()
@@ -21,7 +22,9 @@ const ItemDetailContainer = () => {
   return (
     <div>
       <p className={stylo.hola}>Detalle Del Producto Seleccionado</p>
-      <ItemDetail {...product} />
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <ItemDetail {...product} />
+      </div>
     </div>
   )
 }
