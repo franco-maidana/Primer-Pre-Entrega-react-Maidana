@@ -1,24 +1,44 @@
-import carteDelDetalle from './ItemDetail.module.css'
-import ItemCount from "../ItemCount/ItemCount"
+import CarteDelDetalle from './ItemDetail.module.css'
+import ItemCount from '../ItemCount/ItemCount'
+import { useState } from 'react'
+import { useCart } from '../../src/contex/carContex'
 
 
-const ItemDetail = ({ nombre, precio, description, imagen, marca, stock, tipo }) => {
-  const handleOnAdd = (quantyly) => {
-    console.log('Se Agrego' + quantyly)
+const ItemDetail = ({ id, nombre, marca, imagen, precio, stock, description, }) => {
+  // const [inputType, setInputType] = useState('button') // estado para cambiar de un imput a otro 
+  const [quantity, setQuantity] = useState(0)
+
+  // const ItemCount = inputType === 'input' ? InputCount : ButtonCount
+
+  const { addItem } = useCart()
+
+  const handleOnAdd = (count) => {
+    const objProductToAdd = {
+      id, nombre, marca, precio, imagen, count
+    }
+    addItem(objProductToAdd)  // esto es lo que se agrego al carro
+    console.log('agregue al carrito: ', count)
+    setQuantity(count)
   }
 
   return (
-    <div className={carteDelDetalle.div}>
-      <section className={carteDelDetalle.caja}>
-        <h1 className={carteDelDetalle.h1}>{nombre}</h1>
-        <h3 className={carteDelDetalle.h1}>{marca}</h3>
-        <img className={carteDelDetalle.img} src={imagen} />
-        <h3 className={carteDelDetalle.precio}>precio: $ {precio}</h3>
-        <ItemCount stock={stock} onAdd={handleOnAdd} />
+    <div className={CarteDelDetalle.div}>
+      <section className={CarteDelDetalle.caja}>
+        <h1 className={CarteDelDetalle.h1}>{nombre}</h1>
+        <h3 className={CarteDelDetalle.h1}>{marca}</h3>
+        <img className={CarteDelDetalle.img} src={imagen} />
+        <h3 className={CarteDelDetalle.precio}>precio: $ {precio}</h3>
+        {
+          quantity === 0 ? (
+            <ItemCount onAdd={handleOnAdd} stock={stock} />
+          ) : (
+            <button>Finalizar compra</button>
+          )
+        }
       </section>
-      <section className={carteDelDetalle.cajaDos}>
+      <section className={CarteDelDetalle.cajaDos}>
         <h1>Especificaciones</h1>
-        <p className={carteDelDetalle.h3}>{description}</p>
+        <p className={CarteDelDetalle.h3}>{description}</p>
       </section>
     </div>
   )

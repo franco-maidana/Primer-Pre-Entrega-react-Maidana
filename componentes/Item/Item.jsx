@@ -1,7 +1,11 @@
 import CartaPresentacion from './Item.module.css'
+import { useContext } from 'react'  // lo importamos para que se pueda usar 
 import { useNavigate } from 'react-router-dom'
+import { CartContext } from '../../src/contex/carContex'
 // destructuramos el product y lo llamamos por props
 const Item = ({ id, imagen, nombre, precio }) => {
+
+  const value = useContext(CartContext)
   //poder navegar con los botones
   const navigate = useNavigate()
 
