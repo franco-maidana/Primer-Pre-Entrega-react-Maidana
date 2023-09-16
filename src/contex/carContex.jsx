@@ -20,10 +20,30 @@ export const CartProvider = ({ children }) => {
     // si cada producto del carrito se cumple con el id mensionado devuelve true si no da false
     return cart.some(prod => prod.id === id)
   }
+  // sumar el total de unidades de compra en el carro
+  const getTotalQuantity = () => {
+    let totalQuantity = 0
 
+    cart.forEach(prod => {
+      totalQuantity += prod.quantity
+    })
+
+    return totalQuantity
+  }
+
+  const totalQuantity = getTotalQuantity()
+
+  // remover productos seleccionados
+  const removeItem = () => {
+    setCart(prev => prev.filter(prod => prod.id != id))
+  }
+
+  const clearCart = () => {
+    setCart([])
+  }
 
   return (
-    <CartContext.Provider value={{ cart, addItem }}>
+    <CartContext.Provider value={{ cart, addItem, totalQuantity, removeItem, clearCart }}>
       {children}
     </CartContext.Provider>
   )

@@ -12,13 +12,13 @@ const ItemDetail = ({ id, nombre, marca, imagen, precio, stock, description, }) 
 
   const { addItem } = useCart()
 
-  const handleOnAdd = (count) => {
+  const handleOnAdd = (quantity) => {
     const objProductToAdd = {
-      id, nombre, marca, precio, imagen, count
+      id, nombre, marca, precio, imagen, quantity
     }
     addItem(objProductToAdd)  // esto es lo que se agrego al carro
-    console.log('agregue al carrito: ', count)
-    setQuantity(count)
+    console.log('agregue al carrito: ', quantity)
+    setQuantity(quantity)
   }
 
   return (
