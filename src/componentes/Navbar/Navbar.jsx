@@ -1,9 +1,10 @@
 import Clases from './Navbar.module.css'
 import CarWidget from "../CartWidget/CartWidget"
-import { useNavigate } from 'react-router-dom'
-
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 const Navbar = () => {
+  const [mostrandoMenu, mostrandoInsumos] = useState(false);
   const navigate = useNavigate()
 
   return (
@@ -12,9 +13,16 @@ const Navbar = () => {
       <section className={Clases.container}>
         <button className={Clases.button} onClick={() => navigate('/Historia')}>Historia</button>
         <button className={Clases.button} onClick={() => navigate('/Cervezas')}>Cervezas</button>
-        <button className={Clases.button} onClick={() => navigate('/Contactos')}>Contactos</button>
         <button className={Clases.button} onClick={() => navigate('/Nosotros')}>Nosotros</button>
+        <button onClick={() => mostrandoInsumos(!mostrandoMenu)}>Insumos</button>
       </section>
+      {mostrandoMenu && (
+        <div className={Clases.BotonSecundario}>
+          <NavLink to="/category/lupulo" className={({ isActive }) => isActive ? Clases.active : Clases.inactive}>Lúpulo</NavLink>
+          <NavLink to="/category/levadura" className={({ isActive }) => isActive ? Clases.active : Clases.inactive}>Levadura</NavLink>
+          <NavLink to="/category/malta" className={({ isActive }) => isActive ? Clases.active : Clases.inactive}>Malta</NavLink>
+        </div>
+      )}
       <CarWidget />
     </nav>
   )

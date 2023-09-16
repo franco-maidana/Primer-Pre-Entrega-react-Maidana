@@ -41,3 +41,17 @@ button:hover {
   justify-content: space-around;
 
 }
+
+.BotonSecundario {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.secundario {
+  margin: 2px;
+}
+
+.active {
+  color: red;
+}

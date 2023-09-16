@@ -1,15 +1,14 @@
 import './App.css'
-import Navbar from './componentes/Navbar/Navbar'
-import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'
-import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'
+import Navbar from './componentes/Navbar/Navbar'   // navBar seleccion de botones
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer'   // lista ded card del array llamado asyncMock
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer'  // detalle de las card seleccionada
 // libreria react router dom para hacer interactuar el navBar
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // distintos tipos de sitio en la pagina
-import Historia from './componentes/Paginas/Historia/historia'
-import Cervezas from './componentes/Paginas/Cervezas/cervezas'
-import Contactos from './componentes/Paginas/Contactos/contactos'
-import Nosotros from './componentes/Paginas/Nosotros/nosotros'
-import { CartProvider } from './contex/carContex'
+import Historia from './componentes/Paginas/Historia/historia'   // componente historia
+import Cervezas from './componentes/Paginas/Cervezas/cervezas'   // componente cerveza
+import Nosotros from './componentes/Paginas/Nosotros/nosotros'   // componente nosotros
+import { CartProvider } from './contex/carContex'       // contex  carrito de compra
 
 
 function App() {
@@ -20,12 +19,13 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path='/' element={<ItemListContainer greeting="!Hola¡  Bienvenidos a la tienda de Insumos Cervecero" />} />
+            <Route path='/' element={<ItemListContainer />} />
+            <Route path='/category/:categoryId' element={<ItemListContainer />} />
             <Route path='/detail/:productId' element={<ItemDetailContainer />} />
             <Route path='/Historia' element={<Historia />} />
             <Route path='/Cervezas' element={<Cervezas />} />
-            <Route path='/Contactos' element={<Contactos />} />
             <Route path='/nosotros' element={<Nosotros />} />
+            <Route path='*' element={<h1>Error 404 not found</h1>} />
           </Routes>
         </BrowserRouter>
       </CartProvider>
