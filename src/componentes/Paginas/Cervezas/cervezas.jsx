@@ -4,7 +4,7 @@ const Cervezas = () => {
   return (
     <div className={Estilos.Ordenando}>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/porter.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/porter.jfif" alt="fotos-cervezas" />
         <section>
           <h3>Porter</h3>
           Una cerveza marrón de moderada intensidad con un restringido carácter
@@ -13,7 +13,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/stout.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/stout.jfif" alt="fotos-cervezas" />
         <section>
           <h3>Stout</h3>
           Una cerveza negra con un sabor tostado pronunciado, a menudo similar al
@@ -23,7 +23,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/American-Pale-Ale.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/indian-pale-ale.jfif" alt="fotos-cervezas" />
         <section>
           <h3>American IPA</h3>
           Ale Americana Pálida (APA) que es amarga y lupulada, con un enfoque en lúpulos
@@ -32,7 +32,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/White-ipa.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/White-ipa.jfif" alt="fotos-cervezas" />
         <section>
           <h3>White IPA</h3>
           Este no es un estilo homologado, nosotros buscamos que tenga las características de una
@@ -42,7 +42,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/indian-pale-ale.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/indian-pale-ale.jfif" alt="fotos-cervezas" />
         <section>
           <h3>Indian Pale Ale (IPA)</h3>
           Es un estilo de cerveza caracterizado por su amargor y aroma pronunciados de lúpulo.
@@ -52,7 +52,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/scotch.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/scotch.jfif" alt="fotos-cervezas" />
         <section>
           <h3>Scotch</h3>
           La cerveza Scotch es un estilo cervecero originario de Escocia, conocido por su sabor dulce y robusto,
@@ -61,7 +61,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/American-Amber-Ale.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/American-Amber-Ale.jfif" alt="fotos-cervezas" />
         <section>
           <h3>American Amber Ale (AAA)</h3>
           es un estilo de cerveza caracterizado por su color ámbar profundo y su equilibrio entre maltas y lúpulos.
@@ -71,7 +71,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/golden.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/golden.jfif" alt="fotos-cervezas" />
         <section>
           <h3>Golden</h3>
           Es un estilo cervecero que se caracteriza por su color dorado brillante y su sabor equilibrado. Suele tener
@@ -80,7 +80,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/honey.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/honey.jfif" alt="fotos-cervezas" />
         <section>
           <h3>Honey</h3>
           es un estilo que incorpora miel como uno de sus ingredientes clave, lo que le añade un dulzor natural
@@ -89,7 +89,7 @@ const Cervezas = () => {
         </section>
       </div>
       <div className={Estilos.acomodando}>
-        <img className={Estilos.imagen} src="/componentes/Paginas/Cervezas/imgCerveza/barley-wine.jfif" alt="fotos-cervezas" />
+        <img className={Estilos.imagen} src="/src/componentes/Paginas/Cervezas/imgCerveza/barley-wine.jfif" alt="fotos-cervezas" />
         <section>
           <h3>Barley Wine</h3>
           Es un estilo robusto y de alta graduación alcohólica, presenta sabores y aromas complejos de maltas tostadas,

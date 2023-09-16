@@ -1,7 +1,7 @@
 import CarteDelDetalle from './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
-import { useCart } from '../../src/contex/carContex'
+import { useCart } from '../../contex/carContex'
 
 
 const ItemDetail = ({ id, nombre, marca, imagen, precio, stock, description, }) => {
