@@ -18,9 +18,9 @@ const Navbar = () => {
       </section>
       {mostrandoMenu && (
         <div className={Clases.BotonSecundario}>
-          <NavLink to="/category/lupulo" className={({ isActive }) => isActive ? Clases.active : Clases.inactive}>Lúpulo</NavLink>
-          <NavLink to="/category/levadura" className={({ isActive }) => isActive ? Clases.active : Clases.inactive}>Levadura</NavLink>
-          <NavLink to="/category/malta" className={({ isActive }) => isActive ? Clases.active : Clases.inactive}>Malta</NavLink>
+          <NavLink to="/category/lupulo" className={Clases.NavLink}>Lúpulo</NavLink>
+          <NavLink to="/category/levadura" className={Clases.NavLink}>Levadura</NavLink>
+          <NavLink to="/category/malta" className={Clases.NavLink}>Malta</NavLink>
         </div>
       )}
       <CarWidget />
