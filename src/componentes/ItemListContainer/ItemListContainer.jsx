@@ -1,9 +1,10 @@
 import main from './ItemListContainer.module.css'
 import { useState, useEffect } from 'react'
-import { getProducts, getProductsByCategory } from '../../asyncMock'
+// import { getProducts, getProductsByCategory } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
-
+import { baseDatos } from '../../service/firebase/firebaseConfig'
+import { getDocs, collection, QuerySnapshot, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({ greeting }) => {
   const [product, setProduct] = useState([])
@@ -26,15 +27,35 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
     setLoading(true)
-    const asyncFunction = categoryId ? getProductsByCategory : getProducts
+    // se hace el filtrado de los productos para que ande los botones de filtrados
+    const productsRef = !categoryId ? collection(baseDatos, 'products') : query(collection(baseDatos, 'products'), where('category', '==', categoryId))
 
-    asyncFunction(categoryId).then(result => {
-      setProduct(result)
-    }).catch(error => {
-      console.log(error)
-    }).finally(() => {
-      setLoading(false)
-    })
+
+    getDocs(productsRef)
+      .then(QuerySnapshot => {
+        const productosDelFirebase = QuerySnapshot.docs.map(doc => {
+          const fields = doc.data()
+          return { id: doc.id, ...fields }
+        })
+
+        setProduct(productosDelFirebase)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+
+    // const asyncFunction = categoryId ? getProductsByCategory : getProducts
+
+    // asyncFunction(categoryId).then(result => {
+    //   setProduct(result)
+    // }).catch(error => {
+    //   console.log(error)
+    // }).finally(() => {
+    //   setLoading(false)
+    // })
   }, [categoryId])
 
   if (loading) {

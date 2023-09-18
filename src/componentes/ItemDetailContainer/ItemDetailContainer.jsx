@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
-import { getProductById } from '../../asyncMock.js'
+// import { getProductById } from '../../asyncMock.js'
 import ItemDetail from '../ItemDetail/ItemDetail.jsx'
 import { useParams } from 'react-router-dom'
 import stylo from './ItemDetailContainer.module.css'
+import { baseDatos } from '../../service/firebase/firebaseConfig.js'
+import { getDoc, doc } from 'firebase/firestore'
+
 
 // pasamos aca en los parentesis el addItem para el carro 
 const ItemDetailContainer = () => {
@@ -11,9 +14,15 @@ const ItemDetailContainer = () => {
   const { productId } = useParams()
 
   useEffect(() => {
-    getProductById(productId)
-      .then(res => {
-        setProduct(res)
+    setLoading(true)
+
+    const productRef = doc(baseDatos, 'products', productId)
+
+    getDoc(productRef)
+      .then(documentSnapshot => {
+        const fields = documentSnapshot.data()
+        const productAdapted = { id: documentSnapshot.id, ...fields }
+        setProduct(productAdapted)
       })
       .catch(error => {
         console.error(error)
@@ -21,6 +30,18 @@ const ItemDetailContainer = () => {
       .finally(() => {
         setLoading(false)
       })
+
+
+    // getProductById(productId)
+    //   .then(res => {
+    //     setProduct(res)
+    //   })
+    //   .catch(error => {
+    //     console.error(error)
+    //   })
+    //   .finally(() => {
+    //     setLoading(false)
+    //   })
   }, [productId])
 
   if (loading) {
