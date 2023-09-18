@@ -3,6 +3,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import { useCart } from '../../contex/carContex'
 import { useNotification } from '../../notificacion/notificacion'
+import { Link, NavLink } from 'react-router-dom'
 
 const ItemDetail = ({ id, nombre, marca, imagen, precio, stock, description, }) => {
   // const [inputType, setInputType] = useState('button') // estado para cambiar de un imput a otro 
@@ -34,7 +35,7 @@ const ItemDetail = ({ id, nombre, marca, imagen, precio, stock, description, }) 
           quantity === 0 ? (
             <ItemCount onAdd={handleOnAdd} stock={stock} />
           ) : (
-            <button>Finalizar compra</button>
+            <Link to="/cart">Finalizar compra</Link>
           )
         }
       </section>

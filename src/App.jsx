@@ -8,9 +8,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Historia from './componentes/Paginas/Historia/historia'   // componente historia
 import Cervezas from './componentes/Paginas/Cervezas/cervezas'   // componente cerveza
 import Nosotros from './componentes/Paginas/Nosotros/nosotros'   // componente nosotros
+import Checkout from './componentes/Checkout/Checkout'
 import { CartProvider } from './contex/carContex'       // contex  carrito de compra
 import { NotificacionProvider } from './notificacion/notificacion'  // notificacion cuando agregas un producto al carro de compras
-
+import CarritoDeCompras from './componentes/CarritoDeCompra/CarritoDeCompra'
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
               <Route path='/' element={<ItemListContainer />} />
               <Route path='/category/:categoryId' element={<ItemListContainer />} />
               <Route path='/detail/:productId' element={<ItemDetailContainer />} />
+              <Route path='/cart' element={<CarritoDeCompras />} />
+              <Route path='/checkout' element={<Checkout />} />
               <Route path='/Historia' element={<Historia />} />
               <Route path='/Cervezas' element={<Cervezas />} />
               <Route path='/nosotros' element={<Nosotros />} />
