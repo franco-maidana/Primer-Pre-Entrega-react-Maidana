@@ -1,15 +1,16 @@
+import { useState } from "react"
 import { useCart } from "../../contex/carContex"
 import { collection, query, where } from 'firebase/firestore'
 import { baseDatos } from "../../service/firebase/firebaseConfig"
 import { addDoc, documentId, getDocs, writeBatch } from "firebase/firestore"
-import { useState } from "react"
-import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false)
   const { cart, total, clearCart } = useCart()
 
+  const navigate = useNavigate()
 
   const createOrden = async () => {
     try {
@@ -58,13 +59,13 @@ const Checkout = () => {
 
         batch.commit()
         clearCart()
-        Navigate('/')
+        navigate('/')
         console.log('el numero de orden es:' + orderId)
       } else {
         alert('hay producto fuera de stock...')
       }
     } catch (error) {
-      console.log('ocurrio un error al obtener datos' + error.message)
+      console.error('ocurrio un error al obtener datos' + error.message)
     } finally {
       setLoading(false)
     }
