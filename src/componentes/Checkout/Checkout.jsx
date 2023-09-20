@@ -4,7 +4,7 @@ import { collection, query, where } from 'firebase/firestore'
 import { baseDatos } from "../../service/firebase/firebaseConfig"
 import { addDoc, documentId, getDocs, writeBatch } from "firebase/firestore"
 import { useNavigate } from "react-router-dom"
-
+import CheckoutForm from "../CheckoutForm/CheckoutForm"
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false)
@@ -12,14 +12,12 @@ const Checkout = () => {
 
   const navigate = useNavigate()
 
-  const createOrden = async () => {
+  const createOrden = async ({ Nombre, Telefono, Email }) => {
     try {
       setLoading(true)
       const objOrder = {
         buyer: {
-          nombre: 'franco maidana',
-          telefono: '123456789',
-          email: 'francomaidana094@gmail.com'
+          Nombre, Telefono, Email
         },
         items: cart,
         total,
@@ -30,7 +28,7 @@ const Checkout = () => {
 
       // buscamos el id de los productos seleccionados en el carrito
       const idProductoComprado = cart.map(prod => prod.id)
-      console.log(idProductoComprado)
+      alert(idProductoComprado)
 
       const productosRef = query(collection(baseDatos, 'products'), where(documentId(), 'in', idProductoComprado))
 
@@ -60,7 +58,7 @@ const Checkout = () => {
         batch.commit()
         clearCart()
         navigate('/')
-        console.log('el numero de orden es:' + orderId)
+        alert('el numero de orden es:' + orderId)
       } else {
         alert('hay producto fuera de stock...')
       }
@@ -79,8 +77,7 @@ const Checkout = () => {
   return (
     <>
       <h1>checkout</h1>
-      <h2>formulario</h2>
-      <button onClick={createOrden}>Generar Orden</button>
+      <CheckoutForm onconfirm={createOrden} />
     </>
   )
 }

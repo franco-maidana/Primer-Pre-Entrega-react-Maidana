@@ -1,29 +1,35 @@
 import { useCart } from "../../contex/carContex"
 import { Link } from "react-router-dom"
+import Carro from "./CarritoDeCompras.module.css"
+
 
 const CarritoDeCompras = () => {
 
   const { cart, removeItem, total } = useCart()
 
   return (
-    <>
-      <h1>usted esta dentro del carrito de compras.</h1>
-      <section>
+    <div className={Carro.moviendo}>
+      <h1>Carrito De Compras</h1>
+      <section className={Carro.compraFinal}>
         {
           cart.map(prod => {
             return (
               <div key={prod.id}>
-                <h1>{prod.nombre}</h1>
-                <button onClick={() => removeItem(prod.id)}>remove</button>
+                <img src={prod.imagen} alt="" />
+                <p className={Carro.nombre}>{prod.nombre}</p>
+                <p className={Carro.nombre}> $ {prod.precio}</p>
+                <p className={Carro.nombre}>{prod.marca}</p>
+                <p className={Carro.nombre}>Cantidad {prod.quantity}</p>
+                <button onClick={() => removeItem(prod.id)}>Eliminar</button>
               </div>
             )
           })
         }
 
       </section>
-      <h2>total: ${total}</h2>
-      <Link to="/checkout">Checkout</Link>
-    </>
+      <h2 className={Carro.total}>Su total a pagar es de: ${total}</h2>
+      <Link className={Carro.siguiente} to="/checkout">Siguiente</Link>
+    </div>
   )
 }
 
