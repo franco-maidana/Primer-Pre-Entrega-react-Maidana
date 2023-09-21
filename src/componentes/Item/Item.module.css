@@ -24,6 +24,14 @@
 
 .botonVerDetalles {
   width: 150px;
+  padding: 4px;
   margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 25px;
 }

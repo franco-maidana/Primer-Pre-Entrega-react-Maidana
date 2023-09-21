@@ -5,23 +5,32 @@
 
 .botones {
   width: 45px;
+  padding: 5px;
   font-size: 10px;
   margin-bottom: 5px;
-  margin-left: 48px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
 }
 
 .botonesDos {
   width: 45px;
+  padding: 5px;
   font-size: 10px;
   margin-bottom: 5px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
 }
 
 .agregarACarro {
-  width: 120px;
-  font-size: 11px;
-  margin: 1px;
-}
-
-.Cantidad {
+  width: 150px;
+  padding: 4px;
+  margin: 2px;
+  border-radius: 5px;
   text-align: center;
+  text-decoration: none;
+  color: black;
 }

@@ -14,7 +14,7 @@ const Item = ({ id, imagen, nombre, precio }) => {
       <h3 className={CartaPresentacion.h3}>{nombre}</h3>
       <img src={imagen} className={CartaPresentacion.imgProductos} alt="img-lupulo" />
       <p className={CartaPresentacion.precio}>Precio: $ {precio}</p>
-      <button className={CartaPresentacion.botonVerDetalles} onClick={() => navigate(`/detail/${id}`)}>Ver Detalles</button>
+      <button className={CartaPresentacion.botonVerDetalles} onClick={() => navigate(`/detail/${id}`)}>Ver Detalle</button>
     </div>
   )
 }

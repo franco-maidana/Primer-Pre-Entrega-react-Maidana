@@ -1,8 +1,0 @@
-.caja {
-  width: 50%;
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-left: 100px;
-  box-shadow: 1px 6px 16px rgba(0, 0, 0, 0.9);
-  margin-top: 15px;
-}

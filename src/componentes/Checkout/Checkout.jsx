@@ -29,6 +29,7 @@ const Checkout = () => {
       // buscamos el id de los productos seleccionados en el carrito
       const idProductoComprado = cart.map(prod => prod.id)
       alert(idProductoComprado)
+      console.log(idProductoComprado)
 
       const productosRef = query(collection(baseDatos, 'products'), where(documentId(), 'in', idProductoComprado))
 
@@ -76,7 +77,7 @@ const Checkout = () => {
 
   return (
     <>
-      <h1>checkout</h1>
+      <h1>Llene los datos para terminar la compra</h1>
       <CheckoutForm onconfirm={createOrden} />
     </>
   )

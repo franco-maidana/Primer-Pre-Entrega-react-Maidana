@@ -3,73 +3,40 @@
   margin: 0;
 }
 
-/* barra de navegacion */
-nav {
-  background-color: darkgray;
+/* Estilos para el navbar */
+.nav {
+  background-color: #333;
+  /* Color de fondo del navbar */
+  color: #fff;
+  /* Color del texto en el navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
-/* fin de la barra de navegacion */
-/* titulo */
+/* Estilos para el título */
 .titulo {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  font-size: 30px;
+  font-size: 24px;
+  margin: 0;
   cursor: pointer;
 }
 
-/* fin del titulo */
-
-button {
-  width: 200px;
-  border-radius: 8px;
-  border: 1px solid black;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: white;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: white;
-}
-
-.container {
-  display: flex;
-  justify-content: space-around;
-
-}
-
-.BotonSecundario {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.secundario {
-  margin: 2px;
-}
-
+/* Estilos para los enlaces de navegación */
 .NavLink {
-  text-align: center;
+  font-size: 20px;
   text-decoration: none;
-  color: black;
-  width: 150px;
-  border-radius: 8px;
-  border: 1px solid black;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: white;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  margin: 5px;
+  color: #fff;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .NavLink:hover {
-  border-color: white;
+  background-color: #555;
+  /* Cambiar color de fondo al pasar el ratón */
 }
+
+/* Estilos para el carrito de compras */
+/* Agrega estilos para tu componente CarWidget según sea necesario */
