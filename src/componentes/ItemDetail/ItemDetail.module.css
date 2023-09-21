@@ -41,6 +41,7 @@
 
 .precio {
   text-align: center;
+  margin-bottom: 5px;
 }
 
 .h3 {
@@ -62,5 +63,9 @@
   align-items: center;
   height: 30px;
   width: 200px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.9);
+  margin-left: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }

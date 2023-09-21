@@ -73,3 +73,11 @@ section div button:hover {
 .carro {
   background-color: white;
 }
+
+.botones {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}

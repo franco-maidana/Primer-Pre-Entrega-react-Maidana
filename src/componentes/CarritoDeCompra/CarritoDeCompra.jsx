@@ -7,6 +7,13 @@ const CarritoDeCompras = () => {
 
   const { cart, removeItem, total } = useCart()
 
+  const vaciarCarrito = () => {
+    // Vaciar carrito de compras
+    cart.forEach((prod) => {
+      removeItem(prod.id);
+    });
+  };
+
   return (
     <div className={Carro.moviendo}>
       <h1>Carrito De Compras</h1>
@@ -28,7 +35,10 @@ const CarritoDeCompras = () => {
 
       </section>
       <h2 className={Carro.total}>Su total a pagar es de: ${total}</h2>
-      <Link className={Carro.siguiente} to="/checkout">Siguiente</Link>
+      <div className={Carro.botones}>
+        <Link className={Carro.siguiente} to="/checkout">Siguiente</Link>
+        <button className={Carro.siguiente} onClick={vaciarCarrito}>Vaciar Carrito</button>
+      </div>
     </div>
   )
 }
