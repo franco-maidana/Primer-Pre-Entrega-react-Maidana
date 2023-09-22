@@ -2,25 +2,27 @@ import CarteDelDetalle from './ItemDetail.module.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import { useCart } from '../../contex/carContex'
-import { useNotification } from '../../notificacion/notificacion'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const ItemDetail = ({ id, nombre, marca, imagen, precio, stock, description, }) => {
-  // const [inputType, setInputType] = useState('button') // estado para cambiar de un imput a otro 
   const [quantity, setQuantity] = useState(0)
 
-  // const ItemCount = inputType === 'input' ? InputCount : ButtonCount
-
   const { addItem } = useCart()
-  const { setNotification } = useNotification()
 
   const handleOnAdd = (quantity) => {
     const objProductToAdd = {
       id, nombre, marca, precio, imagen, quantity
     }
     addItem(objProductToAdd) // esto es lo que se agrego al carro
-    setNotification(`se agregaron ${quantity} ${nombre} al carrito`)
-    console.log('agregue al carrito: ', quantity)
+    // setNotification()
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: `se agregaron ${quantity} ${nombre} al carrito`,
+      showConfirmButton: false,
+      timer: 1500
+    })
     setQuantity(quantity)
   }
 

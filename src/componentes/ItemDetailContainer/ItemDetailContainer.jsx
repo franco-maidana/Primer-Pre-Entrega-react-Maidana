@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-// import { getProductById } from '../../asyncMock.js'
 import ItemDetail from '../ItemDetail/ItemDetail.jsx'
 import { useParams } from 'react-router-dom'
 import stylo from './ItemDetailContainer.module.css'
@@ -31,17 +30,6 @@ const ItemDetailContainer = () => {
         setLoading(false)
       })
 
-
-    // getProductById(productId)
-    //   .then(res => {
-    //     setProduct(res)
-    //   })
-    //   .catch(error => {
-    //     console.error(error)
-    //   })
-    //   .finally(() => {
-    //     setLoading(false)
-    //   })
   }, [productId])
 
   if (loading) {

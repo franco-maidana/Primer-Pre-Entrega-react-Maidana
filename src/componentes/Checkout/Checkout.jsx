@@ -5,6 +5,8 @@ import { baseDatos } from "../../service/firebase/firebaseConfig"
 import { addDoc, documentId, getDocs, writeBatch } from "firebase/firestore"
 import { useNavigate } from "react-router-dom"
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
+import Swal from "sweetalert2"
+
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false)
@@ -28,8 +30,6 @@ const Checkout = () => {
 
       // buscamos el id de los productos seleccionados en el carrito
       const idProductoComprado = cart.map(prod => prod.id)
-      alert(idProductoComprado)
-      console.log(idProductoComprado)
 
       const productosRef = query(collection(baseDatos, 'products'), where(documentId(), 'in', idProductoComprado))
 
@@ -59,9 +59,30 @@ const Checkout = () => {
         batch.commit()
         clearCart()
         navigate('/')
-        alert('el numero de orden es:' + orderId)
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+
+        Toast.fire({
+          icon: 'success',
+          title: 'Compra existosa su numero de orden es:' + '' + orderId
+        })
       } else {
-        alert('hay producto fuera de stock...')
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'hay producto fuera de stock...',
+          showConfirmButton: false,
+          timer: 1500
+        })
       }
     } catch (error) {
       console.error('ocurrio un error al obtener datos' + error.message)

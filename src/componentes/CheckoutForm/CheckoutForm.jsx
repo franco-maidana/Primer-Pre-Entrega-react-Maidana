@@ -19,7 +19,6 @@ const CheckoutForm = ({ createOrden, onconfirm }) => {
   return (
     <div>
       <div className={Formulario.dividiendo}>
-        {/* se envia el formulario al  handleConfirm */}
         <form className={Formulario.form} onSubmit={handleConfirm}>
           <label>Nombre</label>
           <input className={Formulario.input} type="text" value={Nombre} onChange={({ target }) => setName(target.value)} placeholder="Escribe tu nombre Aqui" />
