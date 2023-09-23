@@ -2,6 +2,9 @@
 
 Sitio web que crea un e-commers de insumos cerveceros con su carrito de compras
 
+link de vercel:
+https://proyecto-final-react-maidana.vercel.app/
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
