@@ -1,4 +1,4 @@
-# React + Vite
+# Insumos Cerveceros realizado con React JS
 
 Sitio web que crea un e-commers de insumos cerveceros con su carrito de compras
 
